@@ -1,2 +1,0 @@
-(this["webpackJsonptest-task-react-bike-booking"]=this["webpackJsonptest-task-react-bike-booking"]||[]).push([[0],{9:function(t,e,n){"use strict";n.r(e);var s=n(1),c=n.n(s),i=n(3),r=n.n(i),o=n(0);var a=function(){return Object(o.jsx)("div",{children:"test-task-react-bike-booking"})};r.a.render(Object(o.jsx)(c.a.StrictMode,{children:Object(o.jsx)(a,{})}),document.getElementById("root"))}},[[9,1,2]]]);
-//# sourceMappingURL=main.00364e72.chunk.js.map
