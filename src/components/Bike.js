@@ -11,6 +11,8 @@ const BikeItem = styled.div`
   margin: 12px;
   display: flex;
   flex-wrap: wrap;
+  flex-basis: 100%;
+  flex-grow: 0;
 `;
 
 const BikeName = styled.span`
@@ -87,15 +89,29 @@ const BikePrice = styled.span`
 
 const Bike = (props) => {
   return (
-    <BikeItem>
+    <BikeItem
+      style={{
+        border:
+          props.bike.status === "Unavailable"
+            ? "2px solid #EB5757"
+            : props.bike.status === "Busy"
+            ? "2px solid #F2994A"
+            : "2px solid #6fcf97",
+      }}
+    >
       <BikeName>
         {props.bike.name} - {props.bike.type} ({props.bike.color})
       </BikeName>
-      <BikeDelete>&#10006;</BikeDelete>
+      <BikeDelete onClick={() => props.handleDelete(props.index)}>
+        &#10006;
+      </BikeDelete>
       <BikeID>ID: {props.bike.id}</BikeID>
       <BikeStatus>
         STATUS:
-        <select value={props.bike.status}>
+        <select
+          value={props.bike.status}
+          onChange={props.onChangeStatus(props.index)}
+        >
           <option value="Avaliable">Avaliable</option>
           <option value="Unavailable">Unavailable</option>
           <option value="Busy">Busy</option>
