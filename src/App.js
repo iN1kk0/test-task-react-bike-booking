@@ -1,9 +1,10 @@
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import Bikes from "./components/Bikes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Form from "./components/Form";
+import Stats from "./components/Stats";
 
 const Wrapper = styled.div`
   border-right: 1px solid #c4c4c4;
@@ -23,13 +24,14 @@ const BikesWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const FormWrapper = styled.div`
+const FormStatsWrapper = styled.div`
   width: 50%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-basis: 50%;
-  padding: 10px;
+  padding-left: 10px;
+`;
+
+const StatsWrapper = styled.div`
+  border-top: 1px solid #c4c4c4;
+  margin: 0 10px 10px;
 `;
 
 const App = () => {
@@ -39,7 +41,7 @@ const App = () => {
       type: "Type 1",
       color: "Green",
       id: "111",
-      status: "Available",
+      status: "Avaliable",
       price: "100",
     },
     {
@@ -49,6 +51,14 @@ const App = () => {
       id: "222",
       status: "Busy",
       price: "200",
+    },
+    {
+      name: "Name 3",
+      type: "Type 3",
+      color: "Blue",
+      id: "333",
+      status: "Avaliable",
+      price: "300",
     },
   ]);
 
@@ -69,7 +79,6 @@ const App = () => {
 
   const onChangeStatus = (index) => (event) => {
     event.preventDefault();
-    console.log(index);
     const newStatusBikes = [...bikes];
     newStatusBikes[index].status = event.target.value;
     setBikes(newStatusBikes);
@@ -78,6 +87,10 @@ const App = () => {
   const handleDelete = (index) => {
     const newBikes = bikes.filter((bikes, i) => i !== index);
     setBikes(newBikes);
+  };
+
+  const handleClear = () => {
+    setValue("");
   };
 
   return (
@@ -91,13 +104,17 @@ const App = () => {
             handleDelete={handleDelete}
           />
         </BikesWrapper>
-        <FormWrapper>
+        <FormStatsWrapper>
           <Form
             handleSubmit={handleSubmit}
             handleChange={handleChange}
+            handleClear={handleClear}
             value={values}
           />
-        </FormWrapper>
+          <StatsWrapper>
+            <Stats bikes={bikes} />
+          </StatsWrapper>
+        </FormStatsWrapper>
       </Wrapper>
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const FormWrapper = styled.form`
   display: flex;
   flex-wrap: wrap;
+  padding: 10px 0 5px 0;
 `;
 
 const Input = styled.input`
@@ -28,7 +29,7 @@ const Textarea = styled.textarea`
   flex: 0 1 100%;
 `;
 
-const Button = styled.button`
+const Button = styled.input`
   display: flex;
   padding: 4px 22px;
   background: #696969;
@@ -96,10 +97,13 @@ const Form = (props) => {
         placeholder="Description"
         required
       ></Textarea>
-      <Button type="submit" name="save">
-        Save
-      </Button>
-      <Button name="clear">Clear</Button>
+      <Button type="submit" name="save" value="Save" />
+      <Button
+        onClick={() => props.handleClear()}
+        type="reset"
+        name="clear"
+        value="Clear"
+      />
     </FormWrapper>
   );
 };

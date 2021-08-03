@@ -45,7 +45,7 @@ export const Footer = () => {
   return (
     <BottomBar>
       <DeveloperLabel>Developer: </DeveloperLabel>
-      <DeveloperName>Nikolay Bychko</DeveloperName>
+      <DeveloperName>Mykola Bychko</DeveloperName>
     </BottomBar>
   );
 };

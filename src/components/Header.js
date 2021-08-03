@@ -6,6 +6,7 @@ const TopBar = styled.div`
   align-items: flex-start;
   padding: 4px 16px;
   background: #696969;
+  height: 42px;
 `;
 
 const MainTitle = styled.h1`
@@ -15,9 +16,7 @@ const MainTitle = styled.h1`
   font-size: 24px;
   line-height: 38px;
   color: #e8e8e8;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  margin: 0;
 `;
 
 export const Header = () => {

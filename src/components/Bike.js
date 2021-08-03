@@ -18,7 +18,6 @@ const BikeItem = styled.div`
 const BikeName = styled.span`
   font-family: Saira;
   font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   line-height: 22px;
   display: flex;
@@ -74,6 +73,10 @@ const BikeStatus = styled.span`
   flex-basis: 50%;
 `;
 
+const BikeStatusTitle = styled.span`
+  margin-right: 18px;
+`;
+
 const BikePrice = styled.span`
   font-family: Saira;
   font-style: normal;
@@ -100,14 +103,14 @@ const Bike = (props) => {
       }}
     >
       <BikeName>
-        {props.bike.name} - {props.bike.type} ({props.bike.color})
+        <b>{props.bike.name}</b> - {props.bike.type} ({props.bike.color})
       </BikeName>
       <BikeDelete onClick={() => props.handleDelete(props.index)}>
         &#10006;
       </BikeDelete>
       <BikeID>ID: {props.bike.id}</BikeID>
       <BikeStatus>
-        STATUS:
+        <BikeStatusTitle>STATUS:</BikeStatusTitle>
         <select
           value={props.bike.status}
           onChange={props.onChangeStatus(props.index)}
