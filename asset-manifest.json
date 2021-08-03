@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/test-task-react-bike-booking/static/js/main.b225ee95.chunk.js",
-    "main.js.map": "/test-task-react-bike-booking/static/js/main.b225ee95.chunk.js.map",
+    "main.js": "/test-task-react-bike-booking/static/js/main.cef6ad75.chunk.js",
+    "main.js.map": "/test-task-react-bike-booking/static/js/main.cef6ad75.chunk.js.map",
     "runtime-main.js": "/test-task-react-bike-booking/static/js/runtime-main.f61da8b5.js",
     "runtime-main.js.map": "/test-task-react-bike-booking/static/js/runtime-main.f61da8b5.js.map",
     "static/js/2.06d86722.chunk.js": "/test-task-react-bike-booking/static/js/2.06d86722.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.f61da8b5.js",
     "static/js/2.06d86722.chunk.js",
-    "static/js/main.b225ee95.chunk.js"
+    "static/js/main.cef6ad75.chunk.js"
   ]
 }
