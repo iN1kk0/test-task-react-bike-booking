@@ -50,6 +50,7 @@ const Form = (props) => {
         value={props.value.name || ""}
         name="name"
         placeholder="Name"
+        type="text"
         required
       />
       <Input
@@ -57,6 +58,7 @@ const Form = (props) => {
         value={props.value.type || ""}
         name="type"
         placeholder="Type"
+        type="text"
         required
       />
       <Input
@@ -64,6 +66,7 @@ const Form = (props) => {
         value={props.value.color || ""}
         name="color"
         placeholder="Color"
+        type="text"
         required
       />
       <Input

@@ -73,7 +73,26 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setBikes([...bikes, values]);
+
+    let unique = true;
+    bikes.forEach((bike) => {
+      if (bike.id === values.id) {
+        unique = false;
+      }
+    });
+
+    if (
+      values.name.length < 5 ||
+      values.type.length < 5 ||
+      values.color.length < 5 ||
+      values.desc.length < 5
+    ) {
+      alert("All text fields minimum length should be 5 characters");
+    } else if (!unique) {
+      alert("All Bike IDs should be unique");
+    } else {
+      setBikes([...bikes, values]);
+    }
   };
 
   const handleChange = (event) => {
