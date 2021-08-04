@@ -34,8 +34,8 @@ const StatsWrapper = styled.div`
   margin: 0 10px 10px;
 `;
 
-const App = () => {
-  const [bikes, setBikes] = useState([
+const initialState = () =>
+  JSON.parse(window.localStorage.getItem("bikes")) || [
     {
       name: "Name 1",
       type: "Type 1",
@@ -60,9 +60,16 @@ const App = () => {
       status: "Avaliable",
       price: "300",
     },
-  ]);
+  ];
+
+const App = () => {
+  const [bikes, setBikes] = useState(initialState);
 
   const [values, setValue] = useState([]);
+
+  useEffect(() => {
+    window.localStorage.setItem("bikes", JSON.stringify(bikes));
+  }, [bikes]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
