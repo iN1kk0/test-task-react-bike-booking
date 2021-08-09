@@ -1,38 +1,15 @@
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import Bikes from "./components/Bikes";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 import { useState, useEffect } from "react";
-import styled from "styled-components";
-import Form from "./components/Form";
-import Stats from "./components/Stats";
-
-const Wrapper = styled.div`
-  border-right: 1px solid #c4c4c4;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-basis: 100%;
-`;
-const BikesWrapper = styled.div`
-  width: 50%;
-  border-right: 1px solid #c4c4c4;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-basis: 50%;
-  padding: 10px;
-  flex-wrap: wrap;
-`;
-
-const FormStatsWrapper = styled.div`
-  width: 50%;
-  padding-left: 10px;
-`;
-
-const StatsWrapper = styled.div`
-  border-top: 1px solid #c4c4c4;
-  margin: 0 10px 10px;
-`;
+import Bikes from "../components/Bikes";
+import Form from "../components/Form";
+import Stats from "../components/Stats";
+import {
+  Wrapper,
+  BikesWrapper,
+  FormStatsWrapper,
+  StatsWrapper,
+} from "../styles/appStyles";
 
 const initialState = () =>
   JSON.parse(window.localStorage.getItem("bikes")) || [
@@ -57,14 +34,13 @@ const initialState = () =>
       type: "Type 3",
       color: "Blue",
       id: "333",
-      status: "Avaliable",
+      status: "Unavailable",
       price: "300",
     },
   ];
 
 const App = () => {
   const [bikes, setBikes] = useState(initialState);
-
   const [values, setValue] = useState([]);
 
   useEffect(() => {
